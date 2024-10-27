@@ -1,38 +1,86 @@
 .App {
   text-align: center;
+  height: 100vh;
+  font-family: 'ArialRoundedMTBold', sans-serif;
+  transition: background-color 0.3s ease-in-out; /* Add transition for background color */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  font-size: 1.5em;
+  color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.background-focus {
+  background-color: #EF5B5B;
+}
+
+.background-sbreak {
+  background-color: #20A39E;
+}
+
+.background-lbreak {
+  background-color: #FFBA49;
+}
+
+header {
+  min-height: 20%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.timeRemaining {
+  font-size: 6em;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.1s ease-in-out;
+}
+
+.stateButton {
+  margin: 10px;
+  padding: 8px;
+  font-size: 16px;
+  width: 120px;
+  color: white;
+  background: none;
+}
+
+.stateButton__focus--selected {
+  background-color: hsl(0, 82%, 45%);
+}
+
+.stateButton__shortBreak--selected {
+  background-color: hsl(178, 67%, 20%);
+}
+
+.stateButton__longBreak--selected {
+  background-color: hsl(37, 100%, 44%);
+}
+
+.triggerButton {
+  margin: 10px;
+  padding: 0px 12px;
+  box-shadow: rgb(235, 235, 235) 0px 6px 0px;
+  font-family: 'ArialRoundedMTBold', sans-serif;
+  transition: color 0.5s ease-in-out, box-shadow 0.1s ease-in-out, transform 0.1s ease-in-out;
+  width: 200px;
+  height: 50px;
+}
+
+.triggerButton:active {
+  box-shadow: rgb(200, 200, 200) 0px 3px 0px; /* Reduced shadow to simulate press */
+  transform: translateY(3px); /* Move the button down */
+  background-color: hsl(0, 0%, 90%); /* Optional: Change background color on press */
 }
