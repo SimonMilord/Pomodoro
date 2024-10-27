@@ -3,21 +3,6 @@ import { useEffect, useState } from "react";
 import pressSound from "./sounds/press.mp3";
 import alertSound from "./sounds/alert.mp3";
 
-/**
- * 0. Create a basic layout and -- DONE
- * 1. Make the background color change based on the state -- DONE
- * 2. Create a timer that counts down from 25 minutes, 5mins and 20mins -- DONE
- * 3. Create a button that starts / pauses the timer -- DONE
- * 4. Make sure we see the state and time remaining in tab title -- DONE
- * 5. Create a button that skips to the next state -- DONE
- * 6. Create alert when timer is done -- DONE
- * 7. Make the message dynamic on the page -- DONE
- * 8. Add a sound when timer is done and when a button is clicked -- DONE
- * 9. Style the page - DONE
- * 10. Refactor the code
- * 11. Create a README.md
- */
-
 const TWENTY_FIVE_MINUTES = 25 * 60;
 const FIVE_MINUTES = 5 * 60;
 const TWENTY_MINUTES = 20 * 60;
@@ -137,7 +122,6 @@ const App = () => {
     setIsRunning(false);
   };
 
-  // Clears the interval and sets the intervalId to null.
   const clearIntervalId = (id: NodeJS.Timeout | null) => {
     if (id) {
       clearInterval(id);
