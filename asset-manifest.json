@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Pomodoro/static/css/main.555c4214.css",
-    "main.js": "/Pomodoro/static/js/main.18fe36a1.js",
-    "static/media/alert.mp3": "/Pomodoro/static/media/alert.fe7ecd678f37d01ed1ab.mp3",
-    "static/media/press.mp3": "/Pomodoro/static/media/press.9b04945159c5a1fd425c.mp3",
-    "index.html": "/Pomodoro/index.html",
-    "main.555c4214.css.map": "/Pomodoro/static/css/main.555c4214.css.map",
-    "main.18fe36a1.js.map": "/Pomodoro/static/js/main.18fe36a1.js.map"
+    "main.css": "./static/css/main.555c4214.css",
+    "main.js": "./static/js/main.ed7db01c.js",
+    "static/media/alert.mp3": "./static/media/alert.fe7ecd678f37d01ed1ab.mp3",
+    "static/media/press.mp3": "./static/media/press.9b04945159c5a1fd425c.mp3",
+    "index.html": "./index.html",
+    "main.555c4214.css.map": "./static/css/main.555c4214.css.map",
+    "main.ed7db01c.js.map": "./static/js/main.ed7db01c.js.map"
   },
   "entrypoints": [
     "static/css/main.555c4214.css",
-    "static/js/main.18fe36a1.js"
+    "static/js/main.ed7db01c.js"
   ]
 }
