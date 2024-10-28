@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/SimonMilord/Pomodoro/static/css/main.555c4214.css",
-    "main.js": "/SimonMilord/Pomodoro/static/js/main.a1393ce6.js",
-    "static/media/alert.mp3": "/SimonMilord/Pomodoro/static/media/alert.fe7ecd678f37d01ed1ab.mp3",
-    "static/media/press.mp3": "/SimonMilord/Pomodoro/static/media/press.9b04945159c5a1fd425c.mp3",
-    "index.html": "/SimonMilord/Pomodoro/index.html",
-    "main.555c4214.css.map": "/SimonMilord/Pomodoro/static/css/main.555c4214.css.map",
-    "main.a1393ce6.js.map": "/SimonMilord/Pomodoro/static/js/main.a1393ce6.js.map"
+    "main.css": "/SimonMilord/Pomodoro/src/static/css/main.555c4214.css",
+    "main.js": "/SimonMilord/Pomodoro/src/static/js/main.70194799.js",
+    "static/media/alert.mp3": "/SimonMilord/Pomodoro/src/static/media/alert.fe7ecd678f37d01ed1ab.mp3",
+    "static/media/press.mp3": "/SimonMilord/Pomodoro/src/static/media/press.9b04945159c5a1fd425c.mp3",
+    "index.html": "/SimonMilord/Pomodoro/src/index.html",
+    "main.555c4214.css.map": "/SimonMilord/Pomodoro/src/static/css/main.555c4214.css.map",
+    "main.70194799.js.map": "/SimonMilord/Pomodoro/src/static/js/main.70194799.js.map"
   },
   "entrypoints": [
     "static/css/main.555c4214.css",
-    "static/js/main.a1393ce6.js"
+    "static/js/main.70194799.js"
   ]
 }
