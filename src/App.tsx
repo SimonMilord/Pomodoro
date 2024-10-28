@@ -14,16 +14,19 @@ const TIMER_STATES = {
     label: "Focus",
     duration: TWENTY_FIVE_MINUTES,
     backgroundClass: "background-focus",
+    description: 'focus',
   },
   shortBreak: {
     label: "Short Break",
     duration: FIVE_MINUTES,
     backgroundClass: "background-sbreak",
+    description: 'take a short break',
   },
   longBreak: {
     label: "Long Break",
     duration: TWENTY_MINUTES,
     backgroundClass: "background-lbreak",
+    description: 'take a long break',
   },
 };
 
@@ -39,7 +42,7 @@ const App = () => {
   const appCSSClass = `App ${TIMER_STATES[timerState].backgroundClass}`;
   const callToActionMessage = `Time to ${TIMER_STATES[
     timerState
-  ].label.toLowerCase()}!`;
+  ].description}!`;
 
   useEffect(() => {
     setTimeRemaining(TIMER_STATES[timerState].duration);
