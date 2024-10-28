@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "//github.io/Pomodoro/static/css/main.555c4214.css",
-    "main.js": "//github.io/Pomodoro/static/js/main.d613d693.js",
-    "static/media/alert.mp3": "//github.io/Pomodoro/static/media/alert.fe7ecd678f37d01ed1ab.mp3",
-    "static/media/press.mp3": "//github.io/Pomodoro/static/media/press.9b04945159c5a1fd425c.mp3",
-    "index.html": "//github.io/Pomodoro/index.html",
-    "main.555c4214.css.map": "//github.io/Pomodoro/static/css/main.555c4214.css.map",
-    "main.d613d693.js.map": "//github.io/Pomodoro/static/js/main.d613d693.js.map"
+    "main.css": "/Pomodoro/static/css/main.555c4214.css",
+    "main.js": "/Pomodoro/static/js/main.18fe36a1.js",
+    "static/media/alert.mp3": "/Pomodoro/static/media/alert.fe7ecd678f37d01ed1ab.mp3",
+    "static/media/press.mp3": "/Pomodoro/static/media/press.9b04945159c5a1fd425c.mp3",
+    "index.html": "/Pomodoro/index.html",
+    "main.555c4214.css.map": "/Pomodoro/static/css/main.555c4214.css.map",
+    "main.18fe36a1.js.map": "/Pomodoro/static/js/main.18fe36a1.js.map"
   },
   "entrypoints": [
     "static/css/main.555c4214.css",
-    "static/js/main.d613d693.js"
+    "static/js/main.18fe36a1.js"
   ]
 }
