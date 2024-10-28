@@ -9,39 +9,40 @@ const TWENTY_MINUTES = 20 * 60;
 const pressAudio = new Audio(pressSound);
 const alertAudio = new Audio(alertSound);
 
+const TIMER_STATES = {
+  focus: {
+    label: "Focus",
+    duration: TWENTY_FIVE_MINUTES,
+    backgroundClass: "background-focus",
+  },
+  shortBreak: {
+    label: "Short Break",
+    duration: FIVE_MINUTES,
+    backgroundClass: "background-sbreak",
+  },
+  longBreak: {
+    label: "Long Break",
+    duration: TWENTY_MINUTES,
+    backgroundClass: "background-lbreak",
+  },
+};
+
+type TimerState = keyof typeof TIMER_STATES;
+
 const App = () => {
-  const [timerState, setTimerState] = useState<string>("focus"); // focus, shortBreak, longBreak
-  const [backgroundColorClass, setBackgroundColorClass] =
-    useState<string>("background-focus");
-  const [timeRemaining, setTimeRemaining] =
-    useState<number>(TWENTY_FIVE_MINUTES);
+  const [timerState, setTimerState] = useState<TimerState>("focus"); // focus, shortBreak, longBreak
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
   const [isRunning, setIsRunning] = useState<boolean>(false);
+  const [timeRemaining, setTimeRemaining] =
+    useState<number>(TWENTY_FIVE_MINUTES);
 
-  const appCSSClass = `App ${backgroundColorClass}`;
-  const callToActionMessage = `Time to ${
-    timerState === "focus"
-      ? "focus!"
-      : timerState === "shortBreak"
-      ? "take a short break!"
-      : "take a long break!"
-  }`;
+  const appCSSClass = `App ${TIMER_STATES[timerState].backgroundClass}`;
+  const callToActionMessage = `Time to ${TIMER_STATES[
+    timerState
+  ].label.toLowerCase()}!`;
 
   useEffect(() => {
-    setBackgroundColorClass(
-      timerState === "focus"
-        ? "background-focus"
-        : timerState === "shortBreak"
-        ? "background-sbreak"
-        : "background-lbreak"
-    );
-    setTimeRemaining(
-      timerState === "focus"
-        ? TWENTY_FIVE_MINUTES
-        : timerState === "shortBreak"
-        ? FIVE_MINUTES
-        : TWENTY_MINUTES
-    );
+    setTimeRemaining(TIMER_STATES[timerState].duration);
   }, [timerState]);
 
   useEffect(() => {
@@ -58,30 +59,21 @@ const App = () => {
     document.title = `${formattedTimeRemaining} - ${callToActionMessage}`;
   }, [timerState, timeRemaining, callToActionMessage]);
 
+  /**
+   * Handles the change of the timer state (focus, shortBreak, longBreak).
+   * @param event
+   */
   const handleChangeState = (event: any) => {
     if (isRunning) {
       setIsRunning(false);
       clearIntervalId(intervalId);
     }
     setTimerState(event.target.id);
-    switch (event.target.id) {
-      case "focus":
-        setTimerState("focus");
-        setTimeRemaining(TWENTY_FIVE_MINUTES);
-        break;
-      case "shortBreak":
-        setTimerState("shortBreak");
-        setTimeRemaining(FIVE_MINUTES);
-        break;
-      case "longBreak":
-        setTimerState("longBreak");
-        setTimeRemaining(TWENTY_MINUTES);
-        break;
-      default:
-        break;
-    }
   };
 
+  /**
+   * Handles the start or pausing of the timer.
+   */
   const handleStartOrPause = () => {
     pressAudio.play();
     if (isRunning) {
@@ -103,25 +95,26 @@ const App = () => {
     }
   };
 
+  /**
+   * Handles skipping to the next timer state.
+   */
   const handleSkip = () => {
     clearIntervalId(intervalId);
-    switch (timerState) {
-      case "focus":
-        setTimerState("shortBreak");
-        break;
-      case "shortBreak":
-        setTimerState("longBreak");
-        break;
-      case "longBreak":
-        setTimerState("focus");
-        break;
-      default:
-        break;
-    }
+    const nextState =
+      timerState === "focus"
+        ? "shortBreak"
+        : timerState === "shortBreak"
+        ? "longBreak"
+        : "focus";
 
+    setTimerState(nextState);
     setIsRunning(false);
   };
 
+  /**
+   * Clears the interval id.
+   * @param id The interval id to clear.
+   */
   const clearIntervalId = (id: NodeJS.Timeout | null) => {
     if (id) {
       clearInterval(id);
@@ -134,33 +127,18 @@ const App = () => {
       <header>Pomodoro timer</header>
       <main>
         <div>
-          <button
-            id="focus"
-            className={`stateButton ${
-              timerState === "focus" ? "stateButton__focus--selected" : null
-            }`}
-            onClick={handleChangeState}
-          >
-            Focus
-          </button>
-          <button
-            id="shortBreak"
-            className={`stateButton ${
-              timerState === "shortBreak" ? "stateButton__shortBreak--selected" : null
-            }`}
-            onClick={handleChangeState}
-          >
-            Short Break
-          </button>
-          <button
-            id="longBreak"
-            className={`stateButton ${
-              timerState === "longBreak" ? "stateButton__longBreak--selected" : null
-            }`}
-            onClick={handleChangeState}
-          >
-            Long Break
-          </button>
+          {Object.keys(TIMER_STATES).map((state) => (
+            <button
+              key={state}
+              id={state}
+              className={`stateButton ${
+                timerState === state ? `stateButton__${state}--selected` : ""
+              }`}
+              onClick={handleChangeState}
+            >
+              {TIMER_STATES[state as TimerState].label}
+            </button>
+          ))}
         </div>
         <p className="timeRemaining">
           {Math.floor(timeRemaining / 60)}:

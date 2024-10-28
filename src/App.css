@@ -1,29 +1,18 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: "ArialRoundedMTBold", sans-serif;
+}
+
 .App {
   text-align: center;
   height: 100vh;
-  font-family: 'ArialRoundedMTBold', sans-serif;
-  transition: background-color 0.3s ease-in-out; /* Add transition for background color */
+  transition: background-color 0.3s ease-in-out;
 }
 
 p {
   font-size: 1.5em;
   color: white;
-}
-
-body {
-  margin: 0;
-}
-
-.background-focus {
-  background-color: #EF5B5B;
-}
-
-.background-sbreak {
-  background-color: #20A39E;
-}
-
-.background-lbreak {
-  background-color: #FFBA49;
 }
 
 header {
@@ -41,6 +30,20 @@ header {
   color: white;
 }
 
+/* Background Colors */
+.background-focus {
+  background-color: #ef5b5b;
+}
+
+.background-sbreak {
+  background-color: #20a39e;
+}
+
+.background-lbreak {
+  background-color: #ffba49;
+}
+
+/* Button Styling */
 button {
   cursor: pointer;
   border: none;
@@ -73,14 +76,14 @@ button {
   margin: 10px;
   padding: 0px 12px;
   box-shadow: rgb(235, 235, 235) 0px 6px 0px;
-  font-family: 'ArialRoundedMTBold', sans-serif;
-  transition: color 0.5s ease-in-out, box-shadow 0.1s ease-in-out, transform 0.1s ease-in-out;
+  transition: color 0.5s ease-in-out, box-shadow 0.1s ease-in-out,
+    transform 0.1s ease-in-out;
   width: 200px;
   height: 50px;
 }
 
 .triggerButton:active {
-  box-shadow: rgb(200, 200, 200) 0px 3px 0px; /* Reduced shadow to simulate press */
-  transform: translateY(3px); /* Move the button down */
-  background-color: hsl(0, 0%, 90%); /* Optional: Change background color on press */
+  box-shadow: rgb(200, 200, 200) 0px 3px 0px;
+  transform: translateY(3px);
+  background-color: hsl(0, 0%, 90%);
 }
